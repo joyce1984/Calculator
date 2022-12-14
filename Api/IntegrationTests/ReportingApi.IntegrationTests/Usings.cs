@@ -1,0 +1,13 @@
+global using Xunit;
+global using MediatR;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Hosting;
+global using ReportingApi.Functions.Reporting;
+global using Serilog;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.Extensions.Primitives;
+global using System.Text;
+global using Dtos.CalculatorUsage;
+global using Microsoft.AspNetCore.Mvc;
+global using Moq;
+global using Newtonsoft.Json;

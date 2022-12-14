@@ -3,3 +3,18 @@
 ################################################################################
 
 /Api/.vs
+/Api/Domain/Domain/bin/Debug/net6.0
+/Api/Domain/Domain/obj
+/Api/Dtos/Dtos/bin/Debug/net6.0
+/Api/Dtos/Dtos/obj/Debug/net6.0
+/Api/Dtos/Dtos/obj/Release/net6.0
+/Api/Dtos/Dtos/obj
+/Api/IntegrationTests/ReportingApi.IntegrationTests/bin/Debug/net6.0
+/Api/IntegrationTests/ReportingApi.IntegrationTests/obj
+/Api/UnitTests/ReportingApi.UnitTests/bin/Debug/net6.0
+/Api/UnitTests/ReportingApi.UnitTests/bin/Release/net6.0
+/Api/UnitTests/ReportingApi.UnitTests/obj
+/UI/.angular/cache/15.0.3
+/.vs/Calculator/config/applicationhost.config
+/.vs/Calculator
+/.vs/Calculator
