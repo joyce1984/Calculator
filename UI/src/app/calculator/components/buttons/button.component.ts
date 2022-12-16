@@ -2,9 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  template: `<button (click)="setSelectedValue(value)" class="{{ cssClass }}">
-    {{ value }}
-  </button>`,
+  template: `<button (click)="setSelectedValue(value)" class="{{ cssClass }}">{{value}}</button>`,
 })
 export class ButtonComponent {
   @Input() value = '';
