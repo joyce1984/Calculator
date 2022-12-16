@@ -1,8 +1,3 @@
-using FluentValidation;
-using FluentValidation.Results;
-using Microsoft.AspNetCore.Mvc;
-using System.Xml.Schema;
-
 namespace ReportingApi.UnitTests
 {
     public class ReportingFunctionsTest : TestBase

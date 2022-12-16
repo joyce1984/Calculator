@@ -1,13 +1,3 @@
-using FluentAssertions;
-using FluentAssertions.Common;
-using Microsoft.AspNetCore.Hosting.Server;
-using Microsoft.AspNetCore.Hosting;
-using ReportingApi.Infastructure.Data;
-using Microsoft.AspNetCore.TestHost;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using System.Data.Common;
-
 namespace ReportingApi.IntegrationTests
 {
     public class ReportingFunctionsTests : TestBase, IClassFixture<DatabaseFixture>

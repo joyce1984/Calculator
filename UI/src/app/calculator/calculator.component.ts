@@ -54,33 +54,39 @@ import { ResizeEvent } from 'angular-resizable-element';
 
       .resize-handle-right 
         right: 0
-    `
-  ]
+    `,
+  ],
 })
-export class CalculatorComponent  implements OnInit {
- 
-
-  constructor(private calculationService: CalculationService, private validatorService: CalculationValidationService,private historyService: HistoryService, private reportingService: ReportingService) {}
+export class CalculatorComponent implements OnInit {
+  constructor(
+    private calculationService: CalculationService,
+    private validatorService: CalculationValidationService,
+    private historyService: HistoryService,
+    private reportingService: ReportingService
+  ) {}
 
   @Input() calculatorInformation!: CalculatorInformation;
-  
+
   calculation!: Calculation;
-  
-  validationResult: ValidationResult={IsValid:false,Messages:Array<string>()};
- 
+
+  validationResult: ValidationResult = {
+    IsValid: false,
+    Messages: Array<string>(),
+  };
+
   history!: Array<Calculation>;
 
-  toggleShowHistory =false;
+  toggleShowHistory = false;
 
   isMaximised = true;
-  
+
   minIcon = '&#128469;';
 
   maxIcon = '&#128470;';
 
   toggleIcon = this.minIcon;
 
-  key='';
+  key = '';
   ngOnInit() {
     this.InitialiseComponent();
   }
@@ -92,53 +98,53 @@ export class CalculatorComponent  implements OnInit {
   private InitialiseComponent() {
     this.InitialiseCalculation();
     this.calculation.CalculatorInformation = this.calculatorInformation;
-    this.key = this.calculatorInformation.SchoolId + '/' + this.calculatorInformation.QuestionNumber;
+    this.key =
+      this.calculatorInformation.SchoolId +
+      '/' +
+      this.calculatorInformation.QuestionNumber;
     this.history = this.historyService.Get(this.key);
   }
 
-  setNumber(number:string)
-  {
-      if(this.hasOperator())
-      {
-        this.setFirstNumber(number);
-      }else{
-        this.setSecondNumber(number)
-      }
+  setNumber(number: string) {
+    if (this.hasOperator()) {
+      this.setFirstNumber(number);
+    } else {
+      this.setSecondNumber(number);
+    }
   }
 
-  hasOperator()
-  {
-      return this.calculation.Operator=='';
+  private hasOperator(): boolean {
+    return this.calculation.Operator == '';
   }
 
-  setFirstNumber(number:string)
-  {
-    this.calculation.FirstNumber += this.addValue(number,this.calculation.FirstNumber);
+  private setFirstNumber(number: string) {
+    this.calculation.FirstNumber += this.addValue(
+      number,
+      this.calculation.FirstNumber
+    );
   }
-  addValue(value: string,currentValue: string): string 
-  {
-      let canAddValue = true;
-      if(value==="." && currentValue.includes('.'))
-      {
-        canAddValue = false;
-      }
-      return canAddValue ? value : '';
-  }
-
-  setSecondNumber(number:string)
-  {
-    this.calculation.SecondNumber += this.addValue(number,this.calculation.SecondNumber);
+  addValue(value: string, currentValue: string): string {
+    let canAddValue = true;
+    if (value === '.' && currentValue.includes('.')) {
+      canAddValue = false;
+    }
+    return canAddValue ? value : '';
   }
 
-  setOperator(operator:string)
-  {
+  private setSecondNumber(number: string) {
+    this.calculation.SecondNumber += this.addValue(
+      number,
+      this.calculation.SecondNumber
+    );
+  }
+
+  setOperator(operator: string) {
     this.calculation.Operator = operator;
   }
 
-  clearNumbers()
-  {
+  clearNumbers() {
     this.InitialiseCalculation();
-    this.validationResult.Messages=[];
+    this.validationResult.Messages = [];
   }
 
   private InitialiseCalculation() {
@@ -147,28 +153,27 @@ export class CalculatorComponent  implements OnInit {
     this.calculation.SecondNumber = '';
     this.calculation.Operator = '';
     this.calculation.Answer = 0;
-    this.calculation.CalculatorInformation=this.calculatorInformation;
+    this.calculation.CalculatorInformation = this.calculatorInformation;
   }
 
-  calculateSum()
-  {
-     this.validationResult = this.validatorService.Validate(this.calculation);
+  calculateSum() {
+    this.validationResult = this.validatorService.Validate(this.calculation);
 
-     if(this.validationResult.IsValid)
-     {
-        this.calculation.Answer = this.calculationService.calculateAnswer(this.calculation);
-        
-        this.reportingService.Send<Calculation>(this.calculation).subscribe();
+    if (this.validationResult.IsValid) {
+      this.calculation.Answer = this.calculationService.calculateAnswer(
+        this.calculation
+      );
 
-        this.history = this.historyService.Add(this.calculation);
+      this.reportingService.Send<Calculation>(this.calculation).subscribe();
 
-        this.resetCalculation();
-     }
- 
+      this.history = this.historyService.Add(this.calculation);
+
+      this.resetCalculation();
+    }
   }
   resetCalculation() {
     let previousAnswer = this.calculation.Answer.toString();
-    this.calculation= new Calculation();
+    this.calculation = new Calculation();
     this.calculation.FirstNumber = previousAnswer;
     this.calculation.SecondNumber = '';
     this.calculation.Operator = '';
@@ -176,18 +181,15 @@ export class CalculatorComponent  implements OnInit {
     this.calculation.CalculatorInformation = this.calculatorInformation;
   }
 
- 
-  showHistory(){
-    this.toggleShowHistory=!this.toggleShowHistory;
+  showHistory() {
+    this.toggleShowHistory = !this.toggleShowHistory;
   }
 
-  selectHistoricCalculation(historicCalculation: Calculation)
-  {
+  selectHistoricCalculation(historicCalculation: Calculation) {
     this.calculation = historicCalculation;
   }
-  toggleDisplayCalculator()
-  {
-    this.isMaximised=!this.isMaximised;
-    this.toggleIcon= this.isMaximised ? this.minIcon : this.maxIcon;
+  toggleDisplayCalculator() {
+    this.isMaximised = !this.isMaximised;
+    this.toggleIcon = this.isMaximised ? this.minIcon : this.maxIcon;
   }
 }

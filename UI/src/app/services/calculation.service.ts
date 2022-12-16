@@ -5,10 +5,10 @@ import { Calculation } from '../models/calculation';
   providedIn: 'root',
 })
 export class CalculationService {
-
-  constructor() { }
-  calculateAnswer(calculation:Calculation): number {
-    return parseFloat(calculation.FirstNumber) * parseFloat(calculation.SecondNumber)
+  constructor() {}
+  calculateAnswer(calculation: Calculation): number {
+    return (
+      parseFloat(calculation.FirstNumber) * parseFloat(calculation.SecondNumber)
+    );
   }
-  
 }

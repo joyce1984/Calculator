@@ -7,16 +7,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ReportingService {
+  constructor(private http: HttpClient) {}
 
-    constructor(private http: HttpClient) { }
+  url: string = 'http://localhost:7252/api/send';
 
-    url :string ="http://localhost:7252/api/send";
-
-    Send<T>(value: T): Observable<unknown> {
-
-        return this.http.post<T>(this.url, value)
-          .pipe(
-            catchError((err) => {console.log(err);return throwError(() => err);})
-          );
-      }
+  Send<T>(value: T): Observable<unknown> {
+    return this.http.post<T>(this.url, value).pipe(
+      catchError((err) => {
+        console.log(err);
+        return throwError(() => err);
+      })
+    );
+  }
 }

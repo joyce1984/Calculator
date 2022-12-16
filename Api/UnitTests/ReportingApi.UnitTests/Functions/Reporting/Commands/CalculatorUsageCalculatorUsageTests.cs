@@ -1,10 +1,4 @@
-﻿using AutoMapper;
-using FluentValidation;
-using FluentValidation.Results;
-using ReportingApi.Infastructure.Mapping;
-using ReportingApi.Infastructure.Services;
-using ValidationResult = FluentValidation.Results.ValidationResult;
-using ValidationException = FluentValidation.ValidationException;
+﻿using ValidationException = FluentValidation.ValidationException;
 namespace ReportingApi.UnitTests.Functions.Reporting.Commands
 {
     public class CalculatorUsageCommandHandlerTests : TestBase

@@ -1,40 +1,124 @@
 <div class="calculator card" cdkDrag>
-  <div><app-toggle [value]="'Calculator'" [icon]="toggleIcon" (onClickEvent)="toggleDisplayCalculator()" [cssClass]="'w-100 align-right btn btn-light waves-effect d-flex justify-content-between'">{{toggleIcon}}</app-toggle> </div>
+  <div>
+    <app-toggle
+      [value]="'Calculator'"
+      [icon]="toggleIcon"
+      (onClickEvent)="toggleDisplayCalculator()"
+      [cssClass]="
+        'w-100 align-right btn btn-light waves-effect d-flex justify-content-between'
+      "
+      >{{ toggleIcon }}</app-toggle
+    >
+  </div>
   <div *ngIf="isMaximised">
-    <app-display [calculation]="calculation" [cssClass]="'calculator-screen z-depth-1'"></app-display>
+    <app-display
+      [calculation]="calculation"
+      [cssClass]="'calculator-screen z-depth-1'"
+    ></app-display>
     <app-errors [messages]="validationResult.Messages"></app-errors>
-    
+
     <div class="calculator-keys">
-      
-      <app-button [value]="'7'" (onClickEvent)="setNumber($event)" [cssClass]="'w-100 btn btn-light waves-effect'">7</app-button>
-      <app-button [value]="'8'" (onClickEvent)="setNumber($event)" [cssClass]="'w-100 btn btn-light waves-effect'">8</app-button>
-      <app-button [value]="'9'" (onClickEvent)="setNumber($event)" [cssClass]="'w-100 btn btn-light waves-effect'">9</app-button>
-  
-  
-      <app-button [value]="'4'" (onClickEvent)="setNumber($event)" [cssClass]="'w-100 btn btn-light waves-effect'">4</app-button>
-      <app-button [value]="'5'" (onClickEvent)="setNumber($event)" [cssClass]="'w-100 btn btn-light waves-effect'">5</app-button>
-      <app-button [value]="'6'" (onClickEvent)="setNumber($event)" [cssClass]="'w-100 btn btn-light waves-effect'">6</app-button>
-  
-  
-      <app-button [value]="'1'" (onClickEvent)="setNumber($event)" [cssClass]="'w-100 btn btn-light waves-effect'">1</app-button>
-      <app-button [value]="'2'" (onClickEvent)="setNumber($event)" [cssClass]="'w-100 btn btn-light waves-effect'">2</app-button>
-      <app-button [value]="'3'" (onClickEvent)="setNumber($event)" [cssClass]="'w-100 btn btn-light waves-effect'">3</app-button>
-     
-      
-      <app-button [value]="'.'" (onClickEvent)="setNumber($event)" [cssClass]="'w-100 decimal function btn btn-secondary'">.</app-button>
-      <app-button [value]="'0'" (onClickEvent)="setNumber($event)" [cssClass]="'w-100 btn btn-light waves-effect'">0</app-button>
-      <app-button [value]="'C'" (onClickEvent)="clearNumbers()" [cssClass]="'w-100 all-clear function btn btn-danger'">C</app-button>
-      
-      <app-button [value]="'X'" (onClickEvent)="setOperator($event)" [cssClass]="'w-100 operator btn btn-info'">&times;</app-button>
-      <app-button [value]="'='" (onClickEvent)="calculateSum()" [cssClass]="'w-100 operator btn btn-info'">=</app-button>
-      <app-button [value]="'&#8634;'" (onClickEvent)="showHistory()" [cssClass]="'w-100 operator btn btn-info'">&#8634;</app-button>
+      <app-button
+        [value]="'7'"
+        (onClickEvent)="setNumber($event)"
+        [cssClass]="'w-100 btn btn-light waves-effect'"
+        >7</app-button
+      >
+      <app-button
+        [value]="'8'"
+        (onClickEvent)="setNumber($event)"
+        [cssClass]="'w-100 btn btn-light waves-effect'"
+        >8</app-button
+      >
+      <app-button
+        [value]="'9'"
+        (onClickEvent)="setNumber($event)"
+        [cssClass]="'w-100 btn btn-light waves-effect'"
+        >9</app-button
+      >
+
+      <app-button
+        [value]="'4'"
+        (onClickEvent)="setNumber($event)"
+        [cssClass]="'w-100 btn btn-light waves-effect'"
+        >4</app-button
+      >
+      <app-button
+        [value]="'5'"
+        (onClickEvent)="setNumber($event)"
+        [cssClass]="'w-100 btn btn-light waves-effect'"
+        >5</app-button
+      >
+      <app-button
+        [value]="'6'"
+        (onClickEvent)="setNumber($event)"
+        [cssClass]="'w-100 btn btn-light waves-effect'"
+        >6</app-button
+      >
+
+      <app-button
+        [value]="'1'"
+        (onClickEvent)="setNumber($event)"
+        [cssClass]="'w-100 btn btn-light waves-effect'"
+        >1</app-button
+      >
+      <app-button
+        [value]="'2'"
+        (onClickEvent)="setNumber($event)"
+        [cssClass]="'w-100 btn btn-light waves-effect'"
+        >2</app-button
+      >
+      <app-button
+        [value]="'3'"
+        (onClickEvent)="setNumber($event)"
+        [cssClass]="'w-100 btn btn-light waves-effect'"
+        >3</app-button
+      >
+
+      <app-button
+        [value]="'.'"
+        (onClickEvent)="setNumber($event)"
+        [cssClass]="'w-100 decimal function btn btn-secondary'"
+        >.</app-button
+      >
+      <app-button
+        [value]="'0'"
+        (onClickEvent)="setNumber($event)"
+        [cssClass]="'w-100 btn btn-light waves-effect'"
+        >0</app-button
+      >
+      <app-button
+        [value]="'C'"
+        (onClickEvent)="clearNumbers()"
+        [cssClass]="'w-100 all-clear function btn btn-danger'"
+        >C</app-button
+      >
+
+      <app-button
+        [value]="'X'"
+        (onClickEvent)="setOperator($event)"
+        [cssClass]="'w-100 operator btn btn-info'"
+        >&times;</app-button
+      >
+      <app-button
+        [value]="'='"
+        (onClickEvent)="calculateSum()"
+        [cssClass]="'w-100 operator btn btn-info'"
+        >=</app-button
+      >
+      <app-button
+        [value]="'&#8634;'"
+        (onClickEvent)="showHistory()"
+        [cssClass]="'w-100 operator btn btn-info'"
+        >&#8634;</app-button
+      >
     </div>
- <br />
-     
-      <app-history [history]="history" [toggleShowHistory]="toggleShowHistory" (onClickEvent)="selectHistoricCalculation($event)"></app-history>
+    <br />
+
+    <app-history
+      [history]="history"
+      [toggleShowHistory]="toggleShowHistory"
+      (onClickEvent)="selectHistoricCalculation($event)"
+    ></app-history>
   </div>
 </div>
-
-
-
-

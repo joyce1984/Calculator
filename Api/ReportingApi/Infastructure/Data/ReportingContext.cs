@@ -14,7 +14,10 @@ namespace ReportingApi.Infastructure.Data
         }
         public ReportingContext(DbContextOptions<ReportingContext> options) : base(options)
         {
-            Database.Migrate();
+            if (!Database.IsInMemory())
+            {
+                Database.Migrate();
+            }
         }
         public virtual DbSet<CalculatorUsage> CalculatorUsages { get; set; }
 

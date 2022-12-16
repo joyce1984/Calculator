@@ -1,4 +1,4 @@
 export interface ValidationResult {
-    IsValid: boolean;
-    Messages: Array<string>;
-  }
+  IsValid: boolean;
+  Messages: Array<string>;
+}

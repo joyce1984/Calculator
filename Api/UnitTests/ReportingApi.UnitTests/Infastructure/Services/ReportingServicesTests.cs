@@ -1,8 +1,4 @@
-﻿using Moq.EntityFrameworkCore;
-using ReportingApi.Infastructure.Data;
-using ReportingApi.Infastructure.Services;
-
-namespace ReportingApi.UnitTests.Infastructure.Services
+﻿namespace ReportingApi.UnitTests.Infastructure.Services
 {
     public class ReportingServiceTests
     {

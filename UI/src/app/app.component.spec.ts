@@ -2,18 +2,13 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { HeroesComponent } from './heroes/heroes.component';
+import { ButtonComponent } from './calculator/components/buttons/button.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        FormsModule
-      ],
-      declarations: [
-        AppComponent,
-        HeroesComponent
-      ]
+      imports: [RouterTestingModule, FormsModule],
+      declarations: [AppComponent, CalculatorComponent, ButtonComponent],
     }).compileComponents();
   });
 
@@ -23,16 +18,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'test'`, () => {
+  it(`should have as title 'calculator'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('test');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('test app is running!');
+    expect(app.title).toEqual('Calculator');
   });
 });

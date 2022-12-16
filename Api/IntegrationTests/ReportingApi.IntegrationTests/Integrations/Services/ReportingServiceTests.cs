@@ -1,13 +1,4 @@
-﻿using Domain;
-using FluentAssertions;
-using ReportingApi.Infastructure.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ReportingApi.IntegrationTests.Integrations.Services
+﻿namespace ReportingApi.IntegrationTests.Integrations.Services
 {
     public class ReportingServiceTests : IClassFixture<DatabaseFixture>
     {

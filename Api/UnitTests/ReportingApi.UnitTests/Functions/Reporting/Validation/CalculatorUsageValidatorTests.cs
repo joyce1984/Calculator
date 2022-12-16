@@ -1,6 +1,4 @@
-﻿using ReportingApi.Functions.Reporting.Validation;
-
-namespace ReportingApi.UnitTests.Functions.Reporting.Validation
+﻿namespace ReportingApi.UnitTests.Functions.Reporting.Validation
 {
     public class CalculatorUsageValidatorTests
     {

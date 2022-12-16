@@ -1,6 +1,4 @@
-﻿using AutoBogus;
-
-namespace ReportingApi.UnitTests
+﻿namespace ReportingApi.UnitTests
 {
     public class TestBase
     {

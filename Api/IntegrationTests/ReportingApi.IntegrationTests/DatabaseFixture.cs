@@ -1,9 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using ReportingApi.Infastructure.Data;
-using System.Data.Common;
-
-namespace ReportingApi.IntegrationTests
+﻿namespace ReportingApi.IntegrationTests
 {
     public class DatabaseFixture : IDisposable
     {

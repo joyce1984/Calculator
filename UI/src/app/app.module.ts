@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { DisplayComponent } from './calculator/components/display/display.component';
-import {ButtonComponent} from './calculator/components/buttons/button.component'
+import { ButtonComponent } from './calculator/components/buttons/button.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResizableModule } from 'angular-resizable-element';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -23,7 +23,7 @@ import { ExamComponent } from './exam.component';
     HistoryComponent,
     ErrorComponent,
     ToggleComponent,
-    ExamComponent
+    ExamComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,9 +31,9 @@ import { ExamComponent } from './exam.component';
     FormsModule,
     HttpClientModule,
     ResizableModule,
-    DragDropModule
+    DragDropModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,9 +1,9 @@
-import { CalculatorInformation } from "./calculationInformation";
+import { CalculatorInformation } from './calculationInformation';
 
 export interface ICalculation {
-    FirstNumber: string;
-    SecondNumber: string;
-    Operator: string;
-    Answer:number;
-    CalculatorInformation :CalculatorInformation;
-  }
+  FirstNumber: string;
+  SecondNumber: string;
+  Operator: string;
+  Answer: number;
+  CalculatorInformation: CalculatorInformation;
+}

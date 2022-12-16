@@ -1,13 +1,4 @@
-﻿using AutoBogus;
-using AutoMapper;
-using ReportingApi.Infastructure.Mapping;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ReportingApi.UnitTests.Infastructure.Mapping
+﻿namespace ReportingApi.UnitTests.Infastructure.Mapping
 {
     public class CalculatorUsageMappingProfileTests : TestBase
     {
